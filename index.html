@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 
-<head>
-    <title>Alan O'Regan</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="alan-oregan Github Showcase Page">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Alan O'Regan">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-</head>
+<html>
+    <head>
+        <title>Alan O'Regan</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="alan-oregan Github Showcase Page">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Alan O'Regan">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="assets/programming.svg">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
 
-<body>
-    <div class = "main">
-        <div class="italics">It's my</div>
-        <div class="highlight">passion to</div>
-        <div class = "button" id='link'><a onclick="javascript:togglePlayer();" title="Hello World!">code</a></div>
-        <div class = "button" id='rotate'>&#10083;&#65039;</div>
-    </div>
-    <!-- The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player"></div>
-</body>
+    <body>
 
-<footer>
-    <script src="js/script.js"></script>
-</footer>
+        <div class = "main">
+            <div class="italics">Programming</div>
+            <div class="highlight">is my</div>
+            <div class = "button" id='link'><a href="#player" onclick="javascript:togglePlayer();" title="Hello World!">passion</a></div>
+            <div id='rotate'>&#10083;&#65039;</div>
+        </div>
+
+        <div class="scroll">
+            <!-- scroll down animation -->
+            <div class="container">
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <span class="text">Scroll down</span>
+            </div>
+            <br>
+            <!-- The <iframe> (and video player) will replace this <div> tag. -->
+            <div id="player"></div>
+        </div>
+    </body>
+
+    <footer>
+        <script src="js/script.js"></script>
+    </footer>
+</html>

@@ -1,11 +1,16 @@
 /* ========================================== General Style ========================================== */
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    background-color: aqua;
+}
+
 body {
     margin: 0;
     font-family: 'Lobster', cursive;
-    text-underline-offset: 3vw;
-    background-color: aqua;
-    /* overflow-y: hidden; */
 }
 
 a {
@@ -14,23 +19,133 @@ a {
     color: inherit;
 }
 
+/* https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+/* 
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(67, 224, 114);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: blueviolet;
+} */
+
+/* ========================================== Scroll Down ========================================== */
+/* https://codepen.io/xonic/pen/KWMaqe */
+
+.scroll {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+}
+
+.container {
+    display: none;
+    position: relative;
+    width: 26.1px;
+    height: 16vh;
+}
+
+.chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: blueviolet;
+}
+
+.chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+    25% {
+        opacity: 1;
+
+    }
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+}
+
+.text {
+    display: block;
+    margin-top: 75px;
+    margin-left: -30px;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    color: blueviolet;
+    white-space: nowrap;
+    opacity: .25;
+    animation: pulse 2s linear alternate infinite;
+}
+
+@keyframes pulse {
+    to {
+        opacity: 1;
+    }
+}
+
 /* ========================================== Classes ========================================== */
 
 .main {
     display: flex;
-    transition-duration: .5s;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    flex-direction: row;
+    align-items: center;
     text-align: center;
-    font-size: 10vw;
+    font-size: 6vw;
     color: blueviolet;
-    z-index: -1;
-    word-wrap:normal;
-    display: inline-block;
+    height: 82vh;
+    text-underline-offset: 1.7vw;
+}
+
+.main div {
+    margin: 0px auto 9vw auto;
 }
 
 .italics {
@@ -48,6 +163,7 @@ a {
     background-color: rgb(67, 224, 114);
     border-radius: 2vw;
     padding: 2vw;
+    width: max-content;
 }
 
 .highlight:hover {
@@ -56,7 +172,7 @@ a {
 
 .button {
     transition-duration: .4s;
-    display: inline-block;
+    /* display: inline-block; */
     width: auto;
 }
 
@@ -65,12 +181,12 @@ a {
 #link:hover {
     cursor: pointer;
     transform: scale(1.1);
-    overflow: none;
 }
 
 #rotate {
     transition-duration: .9s;
-    border-radius: 10vw;
+    border-radius: 6vw;
+    width: fit-content;
 }
 
 #rotate:hover {
@@ -85,9 +201,12 @@ a {
 
 /* ========================================== Responsive ========================================== */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     .main {
-        display: fl;
+        justify-content: center;
         font-size: 14vw;
+        text-underline-offset: 3.7vw;
+        flex-direction: column;
+        width: 100%;
     }
 }
