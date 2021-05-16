@@ -1,0 +1,93 @@
+/* ========================================== General Style ========================================== */
+
+body {
+    margin: 0;
+    font-family: 'Lobster', cursive;
+    text-underline-offset: 3vw;
+    background-color: aqua;
+    /* overflow-y: hidden; */
+}
+
+a {
+    font-family: 'Bungee Inline', cursive;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ========================================== Classes ========================================== */
+
+.main {
+    display: flex;
+    transition-duration: .5s;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 10vw;
+    color: blueviolet;
+    z-index: -1;
+    word-wrap:normal;
+    display: inline-block;
+}
+
+.italics {
+    color: rgb(255, 174, 0);
+    margin-bottom: 3vw;
+}
+
+.italics:hover {
+    text-decoration-line: underline;
+    text-decoration-style:dotted;
+}
+
+.highlight {
+    text-decoration-line: underline;
+    background-color: rgb(67, 224, 114);
+    border-radius: 2vw;
+    padding: 2vw;
+}
+
+.highlight:hover {
+    background-color: blue;
+}
+
+.button {
+    transition-duration: .4s;
+    display: inline-block;
+    width: auto;
+}
+
+/* ========================================== Ids ========================================== */
+
+#link:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    overflow: none;
+}
+
+#rotate {
+    transition-duration: .9s;
+    border-radius: 10vw;
+}
+
+#rotate:hover {
+    transform: rotate(360deg);
+}
+
+#player {
+    display: none;
+    width: 100%;
+    height: 100vh;
+}
+
+/* ========================================== Responsive ========================================== */
+
+@media only screen and (max-width: 900px) {
+    .main {
+        display: fl;
+        font-size: 14vw;
+    }
+}
